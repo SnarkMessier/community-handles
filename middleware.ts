@@ -1,7 +1,8 @@
 import { NextResponse, type NextRequest } from "next/server";
 
-export function middleware(request: NextRequest) {
-  const url = new URL(request.url);
+export function middleware(request) {
+  return NextResponse.next(); // Temporarily disable any rewrites
+}
 
   // Check if the request hostname matches 'nyr.social'
   if (url.hostname === "nyr.social") {
